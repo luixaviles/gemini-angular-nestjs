@@ -1,0 +1,23 @@
+{
+  "name": "data-model",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/data-model",
+        "main": "libs/data-model/src/index.ts",
+        "tsConfig": "libs/data-model/tsconfig.lib.json",
+        "assets": ["libs/data-model/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs data-model {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

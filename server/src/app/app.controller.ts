@@ -1,13 +1,23 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 
-import { AppService } from './app.service';
+import { ChatContent } from 'data-model';
+import { ChatService } from './chat.service';
+import { TextService } from './text.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  
+  constructor(private readonly chatService: ChatService, private readonly textService: TextService) {}
 
-  @Get()
-  getData() {
-    return this.appService.getData();
+  @Post('chat')
+  chat(@Body() chatContent: ChatContent) {
+    console.log('postData', chatContent);
+    return this.chatService.chat(chatContent);
+  }
+  
+  @Post('text')
+  text(@Body() chatContent: ChatContent) {
+    console.log('postData', chatContent);
+    return this.textService.generateText(chatContent.message);
   }
 }

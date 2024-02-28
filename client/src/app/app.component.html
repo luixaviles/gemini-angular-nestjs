@@ -1,1 +1,19 @@
-<corp-nx-welcome></corp-nx-welcome> <router-outlet></router-outlet>
+<mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item routerLink="chat">
+          <mat-icon matListItemIcon>chat_bubble</mat-icon>
+          <span matListItemTitle>Chat</span>
+        </a>
+        <a mat-list-item routerLink="text">
+          <mat-icon matListItemIcon>subject</mat-icon>
+          <span matListItemTitle>Text Generation</span>
+        </a>
+      </mat-nav-list>
+    </mat-drawer>
+  
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

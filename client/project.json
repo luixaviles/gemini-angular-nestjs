@@ -8,16 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/client",
         "index": "client/src/index.html",
         "browser": "client/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "client/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["client/src/favicon.ico", "client/src/assets"],
-        "styles": ["client/src/styles.scss"],
+        "assets": [
+          "client/src/favicon.ico",
+          "client/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "client/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
