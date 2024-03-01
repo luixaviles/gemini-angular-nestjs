@@ -34,9 +34,7 @@ export class ChatService {
   async chat(chatContent: ChatContent): Promise<ChatContent> {
     const result = await this.chatSession.sendMessage(chatContent.message);
     const response = await result.response;
-    console.log('response', response);
     const text = response.text();
-    console.log('response text', text);
 
     return {
       message: text,

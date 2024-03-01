@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {RouterModule} from '@angular/router'
-
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -24,12 +18,7 @@ import { ClientChatContent } from '../client-chat-content';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
     MatIconModule,
-    MatCardModule,
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -40,7 +29,7 @@ import { ClientChatContent } from '../client-chat-content';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent {
-  message = 'Tell me something about cats';
+  message = '';
 
   contents: ClientChatContent[] = [];
 

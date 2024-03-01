@@ -11,13 +11,11 @@ export class AppController {
 
   @Post('chat')
   chat(@Body() chatContent: ChatContent) {
-    console.log('postData', chatContent);
     return this.chatService.chat(chatContent);
   }
   
   @Post('text')
   text(@Body() chatContent: ChatContent) {
-    console.log('postData', chatContent);
     return this.textService.generateText(chatContent.message);
   }
 }

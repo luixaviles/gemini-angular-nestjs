@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,7 +21,6 @@ import { finalize } from 'rxjs';
   imports: [
     CommonModule,
     MatIconModule,
-    MatCardModule,
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -34,7 +32,7 @@ import { finalize } from 'rxjs';
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent {
-  message = 'What is the Gemini model?';
+  message = '';
   contents: ClientChatContent[] = [];
 
   constructor(private geminiService: GeminiService) {}
