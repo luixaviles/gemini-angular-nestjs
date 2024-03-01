@@ -14,7 +14,7 @@ This project has been implemented entirely using the `TypeScript` language.
 <img src="./images/gemini-angular-nestjs.png?raw=true">
 
 ## Blog Post
-Coming soon
+Read the blog post with all the details about the implementation of this project here: [https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/](https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/)
 
 ## Support this project
 - Star GitHub repository :star:
