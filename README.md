@@ -13,15 +13,28 @@ This project has been implemented entirely using the `TypeScript` language.
 
 <img src="./images/gemini-angular-nestjs.png?raw=true">
 
-## Blog Post
-Read the blog post with all the details about the implementation of this project here: [https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/](https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/)
+## Blog Posts
+
+1. [https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/](https://luixaviles.com/2024/03/build-gemini-chatbot-with-angular-and-nestjs/). Start a project from scratch and generate an Nx-based workspace using Angular and NestJS. The web application support a multi-turn conversation(chatbot) and text generation using Gemini models.
+
+1. [https://luixaviles.com/2024/03/using-gemini-pro-vision-image-processing-using-angular-nestjs/](https://luixaviles.com/2024/03/using-gemini-pro-vision-image-processing-using-angular-nestjs/). Add the Image processing ability to the existing application. It uses the Gemini Pro Vision Model.
+
+## Features
+
+This project currently supports:
+
+- Multi-turn conversations (Chatbot application)
+- Text Generation
+- Image Processing
+
+<img src="./images/gemini-vision-pro_angular-nestjs-app.png?raw=true">
 
 ## Support this project
 - Star GitHub repository :star:
 - Create pull requests, submit bugs or suggest new features
 - Follow updates on [Twitter](https://twitter.com/luixaviles) or [Github](https://github.com/luixaviles)
 
-# Running the Project Locally
+## Running the Project Locally
 First, ensure you have the following installed:
 
 1. NodeJS - Download and Install latest version of Node: [NodeJS](https://nodejs.org)
@@ -29,15 +42,24 @@ First, ensure you have the following installed:
 
 After that, use `Git bash` to run all commands if you are on Windows platform.
 
-## Clone repository
+### Clone repository
 In order to start the project use:
 
 ```bash
 $ git clone https://github.com/luixaviles/gemini-angular-nestjs.git
 $ cd gemini-angular-nestjs
 ```
+### Get an API Key from Google AI Studio
 
-## Preview the Application
+Go to the [Google AI Studio](https://aistudio.google.com/app/) website and generate an API Key.
+
+Next, create an `.env` file under the `/server` directory with the API key value you generated(You'll find a `.env.example` file as an example there):
+
+```txt
+API_KEY=<Your API Key goes here>
+```
+
+### Preview the Application
 This project is based on Nx tooling. If you don't have Nx installed, you can do so by using:
 
 ```bash
