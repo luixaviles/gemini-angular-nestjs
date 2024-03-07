@@ -1,0 +1,49 @@
+<div class="chat-container">
+  <div class="message-container" *ngIf="contents.length === 0">
+    <p class="message">
+      Welcome to your Gemini Vision App <br />
+      Write a text and attach an image to start.
+    </p>
+  </div>
+  <div
+    *ngFor="let content of contents"
+    class="chat-message"
+    [ngClass]="content.agent"
+  >
+    <img [src]="'assets/avatar-' + content.agent + '.png'" class="avatar" />
+    <div class="message-details">
+        <img *ngIf="content.imagePreview" [src]="content.imagePreview" height="150px" alt="Image Preview" />
+        <p
+            class="message-content"
+            [ngClass]="{ loading: content.loading }"
+            [innerHTML]="content.message | lineBreak"
+        ></p>
+    </div>
+  </div>
+</div>
+
+<div class="chat-footer-container">
+  <mat-form-field class="chat-input">
+    <div class="image-preview" *ngIf="imageFile?.preview">
+      <img [src]="imageFile?.preview" width="100px" alt="Image Preview" />
+      <button mat-icon-button matTooltip="Remove" color="warn" (click)="imageFile=undefined;inputImage.value='';">
+        <mat-icon class="custom-icon-size">close</mat-icon>
+      </button>
+    </div>
+    <input
+      placeholder="Send a message"
+      matInput
+      #inputMessage
+      [(ngModel)]="message"
+      (keyup.enter)="sendMessage(message)"
+    />
+
+    <button mat-icon-button matSuffix class="image-upload-button">
+        <input type="file" accept="image/png, image/jpeg, image/webp" (change)="selectImage($event)" #inputImage/>
+        <mat-icon>add_photo_alternate</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-icon-button color="primary" (click)="sendMessage(message);inputImage.value=''">
+    <mat-icon>send</mat-icon>
+  </button>
+</div>
